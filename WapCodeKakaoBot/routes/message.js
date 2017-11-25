@@ -31,10 +31,8 @@ function getTitle(text) {
     var title = text.split('\n')[0];
     console.log('**********');
     console.log(title);
-    for(var i=0;i<title.length;i++){
-        console.log(i);
-        if(!('a'<=title.charAt(i) && title.charAt(i)<='z' || 'A'<=title.charAt(i) && title.charAt(i)<='Z' || title.charAt(i)=='.')){
-            console.log(i);
+    while(true){
+        if(!('a'<=title.charAt(0) && title.charAt(0)<='z' || 'A'<=title.charAt(0) && title.charAt(0)<='Z' || title.charAt(0)=='.')){
             title = title.substr(1,title.length);
         }
         else{
