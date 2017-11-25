@@ -35,7 +35,7 @@ function getTitle(text) {
         console.log(i);
         if(!('a'<=title.charAt(i) && title.charAt(i)<='z' || 'A'<=title.charAt(i) && title.charAt(i)<='Z' || title.charAt(i)=='.')){
             console.log(i);
-            title = title.substr(i+1,title.length);
+            title = title.substr(1,title.length);
         }
         else{
             break;
