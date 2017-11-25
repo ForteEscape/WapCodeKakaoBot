@@ -32,7 +32,9 @@ function getTitle(text) {
     console.log('**********');
     console.log(title);
     for(var i=0;i<title.length;i++){
+        console(i);
         if(!('a'<=title.charAt(i) && title.charAt(i)<='z' || 'A'<=title.charAt(i) && title.charAt(i)<='Z' || title.charAt(i)=='.')){
+            console(i);
             title = title.substr(i+1,title.length);
         }
         else{
@@ -41,7 +43,9 @@ function getTitle(text) {
     }
     console.log(title);
     for(var i=0;i<title.length;i++){
+        console(i);
         if(!('a'<=title.charAt(i) && title.charAt(i)<='z' || 'A'<=title.charAt(i) && title.charAt(i)<='Z' || title.charAt(i)=='.')){
+            console(i);
             title = title.substr(0,i);
             break;
         }
