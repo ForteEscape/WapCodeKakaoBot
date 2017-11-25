@@ -11,7 +11,7 @@ router.post('/', function(req, res, next) {
     console.log(extend);
     res.send({
         "message": {
-            "text": ansTxt
+            "text": extend
         }
     });
 });

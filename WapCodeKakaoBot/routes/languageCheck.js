@@ -4,7 +4,8 @@ function langCheck(code) {
     if(extend==null){
         return null;
     }
-    console.log(extend)
+    console.log('asdf');
+    console.log(extend);
     return extend;
 }
 
