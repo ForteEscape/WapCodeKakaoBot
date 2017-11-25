@@ -29,10 +29,14 @@ router.get('/:user_key/:title', function (req, res, next) {
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushSql.js"></script>\n' +
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushVb.js"></script>\n' +
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushXml.js"></script>\n' +
+        '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shAutoloader.js"></script>\n' +
         '<link type="text/css" rel="stylesheet" href="/stylesheets/syntaxhighlighter/shCore.css">\n' +
         '<link type="text/css" rel="stylesheet" href="/stylesheets/syntaxhighlighter/shThemeDefault.css">\n' +
         '<script language="javascript">' +
-        'dp.SyntaxHighlighter.HighlightAll(\'code\');' +
+        'SyntaxHighlighter.autoloader(' +
+        '    \'js jscript javascript    /js/shBrushJScript.js\','+
+        '    \'applescript              /js/shBrushAppleScript.js\');'+
+        'SyntaxHighlighter.all();' +
         '</script>'+
         '</head><body>';
     //console.log(user_key);
@@ -40,7 +44,7 @@ router.get('/:user_key/:title', function (req, res, next) {
     //console.log(buffer);
     buffer = buffer.replace('<', '&lt');
     buffer = buffer.replace('>', '&gt');
-    var st = sc + '<script>' + buffer + '</script></body></html>';
+    var st = sc + '<pre class="brush: cpp">' + buffer + '</pre></body></html>';
     console.log(st);
     res.send(st);
 });
