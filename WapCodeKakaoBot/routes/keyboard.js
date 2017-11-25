@@ -6,8 +6,7 @@ router.get('/', function(req, res, next) {
     //res.render('index', { title: 'Express' });
     //console.log(req)
     var test = {
-        "type" : "buttons",
-        "buttons":["선택1","선택2","선택3"]
+        "type" : "text"
     };
     res.send(test)
 });
