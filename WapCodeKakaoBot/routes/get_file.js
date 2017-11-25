@@ -11,14 +11,14 @@ router.get('/:user_key/:title', function (req, res, next) {
     var title = req.params.title;
     var buffer = fs.readFileSync(user_key + '/' + title, 'utf8');
     var sc = '<link rel="stylesheet" href="/stylesheets/highjs/default.css">\n' +
-        '<script src="/javascripts/highjs/highlight.pack.js"></script>\n' +
+        '<script src="/javascripts/highjs/highlight.js"></script>\n' +
         '<script>hljs.initHighlightingOnLoad();</script> ';
     //console.log(user_key);
     //console.log(title);
     //console.log(buffer);
     buffer = buffer.replace('<', '&lt');
     buffer = buffer.replace('>', '&gt');
-    var st = sc+'<pre><code class="c">' + buffer + '</pre></code>';
+    var st = sc+'<pre><code class="c">' + buffer + '</code></pre>';
     console.log(st);
     res.send(st);
 });
