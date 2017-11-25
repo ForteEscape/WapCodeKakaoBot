@@ -40,7 +40,7 @@ router.get('/:user_key/:title', function (req, res, next) {
     //console.log(buffer);
     buffer = buffer.replace('<','&lt');
     buffer = buffer.replace('>','&gt');
-    var st = sc+'<textarea name="code" class="brush:cpp;">'+buffer+'</textarea>';
+    var st = sc+'<textarea name="code" class="brush:cpp;">'+buffer+'</textarea>'+'<script>dp.SyntaxHighlighter.HighlightAll(\'code\');</script>';
     console.log(st);
     res.send(st);
 });
