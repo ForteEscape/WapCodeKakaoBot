@@ -11,7 +11,7 @@ var keyboard = require('./routes/keyboard');
 var chat_root = require('./routes/chat_room');
 var friend = require('./routes/friend');
 var message = require('./routes/message');
-var get_file = require('./routes/get_ile');
+var get_file = require('./routes/get_file');
 
 var app = express();
 
