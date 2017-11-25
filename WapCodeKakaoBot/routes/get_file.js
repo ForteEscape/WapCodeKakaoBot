@@ -13,7 +13,7 @@ router.get('/:user_key/:title', function (req, res, next) {
     console.log(user_key);
     console.log(title);
     console.log(buffer);
-    res.send('respond with a resource');
+    res.send(buffer);
 });
 
 module.exports = router;
