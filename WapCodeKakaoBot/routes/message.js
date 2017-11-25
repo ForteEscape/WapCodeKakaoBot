@@ -17,7 +17,14 @@ router.post('/', function(req, res, next) {
 
 function langCheck(code) {
     var extend = code.split('\n')[0];
+    var count = 0;
     extend = extend.split('.')[1];
+    for(var i=0;i<extend.length;i++){
+        if(!('a'<=extend && extend<='z' || 'A'<=extend && extend<='Z')){
+            extend = extend.substr(0,i);
+            break;
+        }
+    }
     console.log(extend);
     return extend;
 }
