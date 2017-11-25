@@ -10,8 +10,8 @@ router.get('/:user_key/:title', function (req, res, next) {
     var user_key = req.params.user_key;
     var title = req.params.title;
     var buffer = fs.readFileSync(user_key + '/' + title, 'utf8');
-    var sc = '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shCore.js"></script>\n' +
-        '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shLegacy.js"></script>\n' +
+    var sc = '<script type="text/javascript" src="javascripts/syntaxhighlighter/shCore.js"></script>\n' +
+        '<script type="text/javascript" src="javascripts/syntaxhighlighter/shLegacy.js"></script>\n' +
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushBash.js"></script>\n' +
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushCpp.js"></script>\n' +
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushCSharp.js"></script>\n' +
