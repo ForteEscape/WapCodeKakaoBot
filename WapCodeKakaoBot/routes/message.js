@@ -7,7 +7,7 @@ router.post('/', function(req, res, next) {
     var ansTxt = '';
     console.log(ans);
     if(ans=='C'){
-        ansTxt = 'C언어 입니다.';
+        ansTxt = 'http://kamang-it.tistory.com';
     }
     else if(ans=='C++'){
         ansTxt = 'C++ 입니다';
