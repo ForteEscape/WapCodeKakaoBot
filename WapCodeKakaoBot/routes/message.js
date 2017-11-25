@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var languageCheck = require('./languageCheck');
 
 router.post('/', function(req, res, next) {
     //res.render('index', { title: 'Express' });
@@ -15,5 +14,11 @@ router.post('/', function(req, res, next) {
         }
     });
 });
+
+function langCheck(code) {
+    var extend = code.split('.')[1];
+    console.log(extend);
+    return extend;
+}
 
 module.exports = router;
