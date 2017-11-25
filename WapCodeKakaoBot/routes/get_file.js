@@ -40,7 +40,7 @@ router.get('/:user_key/:title', function (req, res, next) {
     //console.log(buffer);
     buffer = buffer.replace('<','&lt');
     buffer = buffer.replace('>','&gt');
-    var st = sc+'<pre type="syntaxhighlighter" class="brush: cpp">'+buffer+'</pre></body></html>';
+    var st = sc+'<pre type="syntaxhighlighter" class="brush: cpp"><![CDATA['+buffer+']]></pre></body></html>';
     console.log(st);
     res.send(st);
 });
