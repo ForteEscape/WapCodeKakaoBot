@@ -34,7 +34,7 @@ router.get('/:user_key/:title', function (req, res, next) {
         '<script type="text/javascript">\n' +
         'SyntaxHighlighter.all();\n' +
         '</script>' +
-        '<body Onload="dp.SyntaxHighlighter.HighlightAll('code');">';
+        '<body Onload="dp.SyntaxHighlighter.HighlightAll(\'code\');">';
     console.log(user_key);
     console.log(title);
     console.log(buffer);
