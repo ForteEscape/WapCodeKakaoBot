@@ -18,7 +18,7 @@ router.get('/:user_key/:title', function (req, res, next) {
     //console.log(buffer);
     buffer = buffer.replace('<', '&lt');
     buffer = buffer.replace('>', '&gt');
-    var st = sc+'<pre><code class="c">' + buffer + '</code></pre>';
+    var st = sc+'<pre><code>' + buffer + '</code></pre>';
     console.log(st);
     res.send(st);
 });
