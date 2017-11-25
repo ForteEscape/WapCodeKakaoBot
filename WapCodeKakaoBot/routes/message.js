@@ -32,17 +32,14 @@ function getTitle(text) {
     console.log('**********');
     console.log(title);
     for(var i=0;i<title.length;i++){
-        console.log(i);
-        if(!('a'<=title.charAt(i) && title.charAt(i)<='z' || 'A'<=title.charAt(i) && title.charAt(i)<='Z')){
+        if(!('a'<=title.charAt(i) && title.charAt(i)<='z' || 'A'<=title.charAt(i) && title.charAt(i)<='Z' || title.charAt(i)=='.')){
             title = title.substr(i+1,title.length);
         }
         else{
             break;
         }
     }
-    console.log(title);
     for(var i=0;i<title.length;i++){
-        console.log(i);
         if('a'<=title.charAt(i) && title.charAt(i)<='z' || 'A'<=title.charAt(i) && title.charAt(i)<='Z' || title.charAt(i)=='.'){
             title = title.substr(0,i);
             break;
