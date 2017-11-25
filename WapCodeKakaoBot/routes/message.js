@@ -20,7 +20,7 @@ function langCheck(code) {
     var count = 0;
     extend = extend.split('.')[1];
     for(var i=0;i<extend.length;i++){
-        if(!('a'<=extend && extend<='z' || 'A'<=extend && extend<='Z')){
+        if(!('a'<=extend && extend<='z') || !('A'<=extend && extend<='Z')){
             extend = extend.substr(0,i);
             break;
         }
