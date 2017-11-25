@@ -38,7 +38,7 @@ router.get('/:user_key/:title', function (req, res, next) {
     console.log(user_key);
     console.log(title);
     console.log(buffer);
-    res.send(sc+'<pre name="code" class="brush:cpp;">'+buffer+'</pre>');
+    res.send(sc+'<pre name="code" class="brush:cpp;">#include</pre>');
 });
 
 module.exports = router;
