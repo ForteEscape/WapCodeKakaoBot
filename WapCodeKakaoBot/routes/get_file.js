@@ -32,11 +32,11 @@ router.get('/:user_key/:title', function (req, res, next) {
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shAutoloader.js"></script>\n' +
         '<link type="text/css" rel="stylesheet" href="/stylesheets/syntaxhighlighter/shCore.css">\n' +
         '<link type="text/css" rel="stylesheet" href="/stylesheets/syntaxhighlighter/shThemeDefault.css">\n' +
-        '<script language="javascript">' +
-        'SyntaxHighlighter.autoloader(' +
-        '    \'js jscript javascript    /js/shBrushJScript.js\','+
-        '    \'applescript              /js/shBrushAppleScript.js\');'+
-        'SyntaxHighlighter.all(\'code\');' +
+        '<script type="text/javascript">' +
+        'window.setTimeout(function() {' +
+        '    SyntaxHighlighter.config.bloggerMode = true;' +
+        '    SyntaxHighlighter.all();' +
+        '}, 10);' +
         '</script>'+
         '</head><body>';
     //console.log(user_key);
@@ -44,7 +44,7 @@ router.get('/:user_key/:title', function (req, res, next) {
     //console.log(buffer);
     buffer = buffer.replace('<', '&lt');
     buffer = buffer.replace('>', '&gt');
-    var st = sc + '<pre name="code" class="brush: cpp">' + buffer + '</pre></body></html>';
+    var st = sc + '<pre name="code" class="cpp">' + buffer + '</pre></body></html>';
     console.log(st);
     res.send(st);
 });
