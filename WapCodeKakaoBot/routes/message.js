@@ -19,8 +19,9 @@ function langCheck(code) {
     var extend = code.split('\n')[0];
     var count = 0;
     extend = extend.split('.')[1];
+    print(extend[1]);
     for(var i=0;i<extend.length;i++){
-        if(!('a'<=extend[i] && extend[i]<='z') || !('A'<=extend[i] && extend[i]<='Z')){
+        if(!('a'<=extend[i] && extend[i]<='z' || 'A'<=extend[i] && extend[i]<='Z')){
             extend = extend.substr(0,i);
             break;
         }
