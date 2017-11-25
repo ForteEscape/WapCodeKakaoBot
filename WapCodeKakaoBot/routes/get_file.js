@@ -36,7 +36,7 @@ router.get('/:user_key/:title', function (req, res, next) {
         'SyntaxHighlighter.autoloader(' +
         '    \'js jscript javascript    /js/shBrushJScript.js\','+
         '    \'applescript              /js/shBrushAppleScript.js\');'+
-        'SyntaxHighlighter.all();' +
+        'SyntaxHighlighter.all(\'code\');' +
         '</script>'+
         '</head><body>';
     //console.log(user_key);
@@ -44,7 +44,7 @@ router.get('/:user_key/:title', function (req, res, next) {
     //console.log(buffer);
     buffer = buffer.replace('<', '&lt');
     buffer = buffer.replace('>', '&gt');
-    var st = sc + '<pre class="brush: cpp">' + buffer + '</pre></body></html>';
+    var st = sc + '<pre name="code" class="brush: cpp">' + buffer + '</pre></body></html>';
     console.log(st);
     res.send(st);
 });
