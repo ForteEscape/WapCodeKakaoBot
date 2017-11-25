@@ -7,6 +7,7 @@ router.post('/', function(req, res, next) {
     var user = req.body.user_key;
     var extend = langCheck(ans);
     var title = getTitle(ans);
+    console.log(user);
     fs.writeFileSync(user+'/'+title, ans, 'utf8');
     res.send({
         "message": {
@@ -29,8 +30,6 @@ function langCheck(code) {
 
 function getTitle(text) {
     var title = text.split('\n')[0];
-    console.log('**********');
-    console.log(title);
     while(true){
         if(!('a'<=title.charAt(0) && title.charAt(0)<='z' || 'A'<=title.charAt(0) && title.charAt(0)<='Z' || title.charAt(0)=='.')){
             title = title.substr(1,title.length);
@@ -39,17 +38,12 @@ function getTitle(text) {
             break;
         }
     }
-    console.log(title);
     for(var i=0;i<title.length;i++){
-        console.log(i);
         if(!('a'<=title.charAt(i) && title.charAt(i)<='z' || 'A'<=title.charAt(i) && title.charAt(i)<='Z' || title.charAt(i)=='.')){
-            console.log(i);
             title = title.substr(0,i);
             break;
         }
     }
-    console.log(title);
-    console.log('**********');
     return title;
 }
 
