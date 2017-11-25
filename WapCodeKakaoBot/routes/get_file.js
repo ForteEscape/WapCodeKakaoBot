@@ -38,7 +38,9 @@ router.get('/:user_key/:title', function (req, res, next) {
     //console.log(user_key);
     //console.log(title);
     //console.log(buffer);
-    var st = sc+'<pre name="code" class="brush:cpp;">'+buffer+'</pre>';
+    buffer = buffer.replace('<','&lt');
+    buffer = buffer.replace('>','&gt');
+    var st = sc+'<textarea name="code" class="brush:cpp;">'+buffer+'</textarea>';
     console.log(st);
     res.send(st);
 });
