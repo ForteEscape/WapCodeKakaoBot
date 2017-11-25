@@ -29,8 +29,8 @@ router.get('/:user_key/:title', function (req, res, next) {
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushSql.js"></script>\n' +
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushVb.js"></script>\n' +
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushXml.js"></script>\n' +
-        '<link type="text/css" rel="stylesheet" href="../../stylesheets/syntaxhighlighter/shCore.css">\n' +
-        '<link type="text/css" rel="stylesheet" href="../../stylesheets/syntaxhighlighter/shThemeDefault.css">\n' +
+        '<link type="text/css" rel="stylesheet" href="/stylesheets/syntaxhighlighter/shCore.css">\n' +
+        '<link type="text/css" rel="stylesheet" href="/stylesheets/syntaxhighlighter/shThemeDefault.css">\n' +
         '<script type="text/javascript">\n' +
         'SyntaxHighlighter.all();\n' +
         '</script>' +
