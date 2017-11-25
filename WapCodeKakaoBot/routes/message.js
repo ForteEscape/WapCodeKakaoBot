@@ -7,7 +7,7 @@ router.post('/', function(req, res, next) {
     var ans = req.body.content;
     var ansTxt = '';
     console.log(ans);
-    var extend = languageCheck.langCheck(ans);
+    var extend = langCheck(ans);
     console.log(extend);
     res.send({
         "message": {
