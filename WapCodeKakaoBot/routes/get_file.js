@@ -32,7 +32,6 @@ router.get('/:user_key/:title', function (req, res, next) {
         '<link type="text/css" rel="stylesheet" href="/stylesheets/syntaxhighlighter/shCore.css">\n' +
         '<link type="text/css" rel="stylesheet" href="/stylesheets/syntaxhighlighter/shThemeDefault.css">\n' +
         '<script language="javascript">' +
-        'dp.SyntaxHighlighter.BloggerMode();' +
         'dp.SyntaxHighlighter.HighlightAll(\'code\');' +
         '</script>'+
         '</head><body>';
@@ -41,7 +40,7 @@ router.get('/:user_key/:title', function (req, res, next) {
     //console.log(buffer);
     buffer = buffer.replace('<', '&lt');
     buffer = buffer.replace('>', '&gt');
-    var st = sc + '<pre name="code" type="syntaxhighlighter" class="brush: cpp">' + buffer + '</pre></body></html>';
+    var st = sc + '<pre class="brush: cp">' + buffer + '<p/pre></body></html>';
     console.log(st);
     res.send(st);
 });
