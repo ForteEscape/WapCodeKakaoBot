@@ -17,7 +17,7 @@ router.post('/', function(req, res, next) {
 
 function langCheck(code) {
     var extend = code.split('\n')[0];
-    extend = code.split('\n')[1];
+    extend = extend.split('\n')[1];
     console.log(extend);
     return extend;
 }
