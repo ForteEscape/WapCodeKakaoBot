@@ -14,7 +14,7 @@ router.post('/', function(req, res, next) {
     fs.writeFileSync('./'+user+'/'+title, ans, 'utf8');
     res.send({
         "message": {
-            "text": extend
+            "text": 'http://http://13.125.18.115:3010/get-file/'+user+'/'+title
         }
     });
 });
