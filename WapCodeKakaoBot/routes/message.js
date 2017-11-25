@@ -11,7 +11,7 @@ router.post('/', function(req, res, next) {
     if(!fs.exists(user)) {
         fs.mkdir(user);
     }
-    fs.writeFileSync(user+'/'+title, ans, 'utf8');
+    fs.writeFileSync('./'+user+'/'+title, ans, 'utf8');
     res.send({
         "message": {
             "text": extend
