@@ -34,13 +34,13 @@ router.get('/:user_key/:title', function (req, res, next) {
         '<script type="text/javascript">\n' +
         'SyntaxHighlighter.all();\n' +
         '</script>' +
-        '</head><body onload="dp.SyntaxHighlighter.HighlightAll(\'code\');">';
+        '</head><body>';
     //console.log(user_key);
     //console.log(title);
     //console.log(buffer);
     buffer = buffer.replace('<','&lt');
     buffer = buffer.replace('>','&gt');
-    var st = sc+'<script type="syntaxhighlighter" class="brush: cpp"><![CDATA['+buffer+']]></script></body></html>';
+    var st = sc+'<script type="syntaxhighlighter" class="brush: cpp">buffer</script></body></html>';
     console.log(st);
     res.send(st);
 });
