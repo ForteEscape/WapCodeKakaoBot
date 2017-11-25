@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var keyboard = require('./routes/keyboard');
 var chat_root = require('./routes/chat_room');
 var friend = require('./routes/friend');
+var message = require('./routes/message');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use('/users', users);
 app.use('/keyboard',keyboard);
 app.use('/friend',friend);
 app.use('/chat_room',chat_root);
+app.use('/message', message);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
