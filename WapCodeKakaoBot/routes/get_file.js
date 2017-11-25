@@ -10,7 +10,7 @@ router.get('/:user_key/:title', function (req, res, next) {
     var user_key = req.params.user_key;
     var title = req.params.title;
     var buffer = fs.readFileSync(user_key + '/' + title, 'utf8');
-    var sc = '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shCore.js"></script>\n' +
+    var sc = '<html><head><script type="text/javascript" src="/javascripts/syntaxhighlighter/shCore.js"></script>\n' +
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shLegacy.js"></script>\n' +
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushBash.js"></script>\n' +
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushCpp.js"></script>\n' +
@@ -34,13 +34,13 @@ router.get('/:user_key/:title', function (req, res, next) {
         '<script type="text/javascript">\n' +
         'SyntaxHighlighter.all();\n' +
         '</script>' +
-        '<body onload="dp.SyntaxHighlighter.HighlightAll(\'code\');">';
+        '</head><body onload="dp.SyntaxHighlighter.HighlightAll(\'code\');">';
     //console.log(user_key);
     //console.log(title);
     //console.log(buffer);
     buffer = buffer.replace('<','&lt');
     buffer = buffer.replace('>','&gt');
-    var st = sc+'<textarea name="code" class="brush:cpp;">'+buffer+'</textarea>';
+    var st = sc+'<textarea name="code" class="brush:cpp;">'+buffer+'</textarea><body><html>';
     console.log(st);
     res.send(st);
 });
