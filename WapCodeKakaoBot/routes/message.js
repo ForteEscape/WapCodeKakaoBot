@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var langCheck = require('languageCheck');
+var languageCheck = require('./languageCheck');
 
 router.post('/', function(req, res, next) {
     //res.render('index', { title: 'Express' });
