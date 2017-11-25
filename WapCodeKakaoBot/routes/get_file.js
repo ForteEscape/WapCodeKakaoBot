@@ -35,10 +35,12 @@ router.get('/:user_key/:title', function (req, res, next) {
         'SyntaxHighlighter.all();\n' +
         '</script>' +
         '<body Onload="dp.SyntaxHighlighter.HighlightAll(\'code\');">';
-    console.log(user_key);
-    console.log(title);
-    console.log(buffer);
-    res.send(sc+'<pre name="code" class="brush:cpp;">#include</pre>');
+    //console.log(user_key);
+    //console.log(title);
+    //console.log(buffer);
+    var st = sc+'<pre name="code" class="brush:cpp;">'+buffer+'</pre>';
+    console.log(st);
+    res.send(st);
 });
 
 module.exports = router;
