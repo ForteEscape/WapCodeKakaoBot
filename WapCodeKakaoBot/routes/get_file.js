@@ -33,12 +33,12 @@ router.get('/:user_key/:title', function (req, res, next) {
         '<link type="text/css" rel="stylesheet" href="../../stylesheets/syntaxhighlighter/shThemeDefault.css">\n' +
         '<script type="text/javascript">\n' +
         'SyntaxHighlighter.all();\n' +
-        '</script>';
-
+        '</script>' +
+        '<body Onload="dp.SyntaxHighlighter.HighlightAll(\'code\');">';
     console.log(user_key);
     console.log(title);
     console.log(buffer);
-    res.send(sc+'<textarea name="code" class="brush:cpp;">'+buffer+'</textarea>'+'<body Onload="dp.SyntaxHighlighter.HighlightAll(\'code\');>');
+    res.send(sc+'<textarea name="code" class="brush:cpp;">'+buffer+'</textarea>');
 });
 
 module.exports = router;
