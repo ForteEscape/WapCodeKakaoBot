@@ -31,16 +31,17 @@ router.get('/:user_key/:title', function (req, res, next) {
         '<script type="text/javascript" src="/javascripts/syntaxhighlighter/shBrushXml.js"></script>\n' +
         '<link type="text/css" rel="stylesheet" href="/stylesheets/syntaxhighlighter/shCore.css">\n' +
         '<link type="text/css" rel="stylesheet" href="/stylesheets/syntaxhighlighter/shThemeDefault.css">\n' +
-        '<script type="text/javascript">\n' +
-        'SyntaxHighlighter.all();\n' +
-        '</script>' +
+        '<script language="javascript">' +
+        'dp.SyntaxHighlighter.BloggerMode();' +
+        'dp.SyntaxHighlighter.HighlightAll(\'code\');' +
+        '</script>'+
         '</head><body>';
     //console.log(user_key);
     //console.log(title);
     //console.log(buffer);
-    buffer = buffer.replace('<','&lt');
-    buffer = buffer.replace('>','&gt');
-    var st = sc+'<script type="syntaxhighlighter" class="brush: cpp">buffer</script></body></html>';
+    buffer = buffer.replace('<', '&lt');
+    buffer = buffer.replace('>', '&gt');
+    var st = sc + '<pre name="code" type="syntaxhighlighter" class="brush: cpp">' + buffer + '</pre></body></html>';
     console.log(st);
     res.send(st);
 });
