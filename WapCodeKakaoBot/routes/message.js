@@ -39,8 +39,9 @@ function getTitle(text) {
             break;
         }
     }
+    console.log(title);
     for(var i=0;i<title.length;i++){
-        if('a'<=title.charAt(i) && title.charAt(i)<='z' || 'A'<=title.charAt(i) && title.charAt(i)<='Z' || title.charAt(i)=='.'){
+        if(!('a'<=title.charAt(i) && title.charAt(i)<='z' || 'A'<=title.charAt(i) && title.charAt(i)<='Z' || title.charAt(i)=='.')){
             title = title.substr(0,i);
             break;
         }
