@@ -8,8 +8,8 @@ router.post('/', function(req, res, next) {
     var extend = langCheck(ans);
     var title = getTitle(ans);
     console.log(user);
-    if(!fs.exists(user)) {
-        fs.mkdir(user);
+    if(!fs.existsSync(user)) {
+        fs.mkdirSync(user);
     }
     fs.writeFileSync('./'+user+'/'+title, ans, 'utf8');
     res.send({
